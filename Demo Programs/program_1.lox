@@ -1,0 +1,17 @@
+// Simple river flow system between two systems. 
+
+var HyliaRiver = @'Hylia River' 8L[4];
+var RutalaRiver = @'RutalaRiver' 6L[5];
+var ZoraRiver = @'Zora River' 5L[5];
+var RutoLake = @'Ruto Lake' 4L[5];
+var ZoraDomain = @'Zora Domain' 12L[0];
+
+HyliaRiver ~ ZoraRiver;  
+RutalaRiver ~ ZoraRiver;
+ZoraRiver ~ RutoLake ~ ZoraDomain;
+
+print HyliaRiver;
+print RutalaRiver;
+print ZoraRiver;
+print RutoLake;
+print ZoraDomain;

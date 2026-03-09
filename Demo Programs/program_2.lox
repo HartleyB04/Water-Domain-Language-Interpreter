@@ -1,0 +1,17 @@
+// Flow system over multiple days
+
+var HyliaRiver = @'Hylia River' 8L[4, 5, 2];
+var RutalaRiver = @'RutalaRiver' 6L[5, 3, 4];
+var ZoraRiver = @'Zora River' 5L[5, 5, 5];
+var RutoLake = @'Ruto Lake' 4L[5, 2];
+var ZoraDomain = @'Zora Domain' 12L[2];
+
+HyliaRiver ~ ZoraRiver;  
+RutalaRiver ~ ZoraRiver;
+ZoraRiver ~ RutoLake ~ ZoraDomain;
+
+print HyliaRiver;
+print RutalaRiver;
+print ZoraRiver;
+print RutoLake;
+print ZoraDomain;

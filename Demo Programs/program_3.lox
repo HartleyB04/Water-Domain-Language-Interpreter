@@ -1,0 +1,13 @@
+// Simple dam system
+
+var RutoLake = @'Ruto Lake' 4L[5, 2];
+var JabuJabuFountain = @'Jabu Jabu Fountain' 3L[4];
+
+dam RutalaDam | 'Rutala Dam' capacity 300L maxflow 50L start 0.5 rainfall 12L[5, 2] simulate 10 policy {
+    threshold 0.8 release 1.0;
+    threshold 0.5 release 0.8;
+    threshold 0.1 release 0.4;
+    default release 0;
+} | RutoLake, JabuJabuFountain;
+
+print RutalaDam;

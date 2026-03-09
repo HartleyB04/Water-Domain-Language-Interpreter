@@ -1,0 +1,28 @@
+// Dam system showing the flow into the dam, the rain, and dam level 
+
+var HyliaRiver = @'Hylia River' 8L[4, 5, 2];
+var RutalaRiver = @'RutalaRiver' 6L[5, 3, 4];
+var ZoraRiver = @'Zora River' 5L[5, 5, 5];
+var RutoLake = @'Ruto Lake' 4L[5, 2];
+var ZoraDomain = @'Zora Domain' 12L[2];
+var JabuJabuFountain = @'Jabu Jabu Fountain' 5L[3];
+
+HyliaRiver ~ ZoraRiver;  
+RutalaRiver ~ ZoraRiver;
+ZoraRiver ~ RutoLake ~ ZoraDomain;
+
+print HyliaRiver;
+print RutalaRiver;
+print ZoraRiver;
+print RutoLake;
+print ZoraDomain;
+print JabuJabuFountain;
+
+dam RutalaDam | 'Rutala Dam' capacity 500L maxflow 50L start 0.5 rainfall 12L[5, 2, 3] simulate 15 policy {
+    threshold 0.8 release 1.0; // release full flow if over 0.8
+    threshold 0.5 release 0.8; // release 0.8 flow over 50% capacity
+    threshold 0.1 release 0.4; // release 0.4 flow if over 10% capacity
+    default release 0; // release nothing if under 10% capacity
+} | ZoraDomain, JabuJabuFountain;
+
+print RutalaDam;
