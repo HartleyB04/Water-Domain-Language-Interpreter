@@ -9,6 +9,7 @@ if [ $# -eq 0 ]; then
     echo "  java -jar build/lox.jar 'Demo Programs'/program_1.lox"
     echo "  java -jar build/lox.jar 'Demo Programs'/program_2.lox"
     echo "  java -jar build/lox.jar 'Demo Programs'/program_3.lox"
+    echo "  java -jar build/lox.jar 'Demo Programs'/program_4.lox"
     exit 1
 fi
 
